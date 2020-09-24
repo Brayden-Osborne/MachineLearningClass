@@ -1,6 +1,7 @@
 import csv
 import numpy as np
 import random
+from matplotlib import pyplot as plt
 
 
 def sigmoid(scores):
@@ -58,15 +59,28 @@ def main():
     weights = np.zeros(features.shape[1])
 
     num_iter = 100000
-    lr = .001
+    lr = .01
+    losses = []
     for idx in range(num_iter):
         weighted_features = np.dot(features, weights)
         probabilities = sigmoid(weighted_features)
         loss = cost(np.array(one_hot_truth_train), probabilities)
         gradient = calculate_gradient(features, probabilities, one_hot_truth_train)
         weights = weights - lr*gradient
-        print(np.average(loss))
-        x=1
+        avg_loss = np.average(loss)
+        print(avg_loss)
+        if idx > 100:
+            losses.append((idx, avg_loss))
+
+    x = [val[0] for val in losses]
+    y = [val[1] for val in losses]
+    plt.plot(x, y)
+    plt.show()
+    test_features = test[:, 0:4].astype(float)
+    test_probs = sigmoid(np.dot(test_features, weights))
+    plt.plot(test_probs)
+    threshold = .9
+    test_preds = [1 if val > threshold else 0 for val in test_probs]
     x=1
 
 
