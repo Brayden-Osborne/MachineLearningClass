@@ -72,7 +72,7 @@ def main():
     data = []
 
     # UPDATE PATH - WILL BREAK IF YOU HAVE NOT SET THE CORRECT PATH
-    iris_data_path = '/Users/Matthew/Documents/GitHub/MachineLearningClass/Homework1/iris_data.csv'
+    iris_data_path = 'iris_data.csv'
 
     label_2_id = {'Iris-setosa': 0, 'Iris-versicolor': 1, 'Iris-virginica': 1}
     id_2_label = {0: 'Setosa', 1: 'NotSetosa'}
