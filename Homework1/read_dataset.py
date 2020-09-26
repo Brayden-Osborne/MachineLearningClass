@@ -1,3 +1,6 @@
+# Problem 3
+# Brayden Osborne, Matt Terry, Tyler Hilbert
+
 import csv
 import numpy as np
 import random
