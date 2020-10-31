@@ -2,7 +2,9 @@
   <dictionary name="brayd">
     <words>
       <w>brayd</w>
+      <w>pred</w>
       <w>setosa</w>
+      <w>simp</w>
       <w>versicolor</w>
       <w>virginica</w>
     </words>
