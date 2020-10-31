@@ -19,16 +19,22 @@ class SVM:
         self.alphas = np.zeros(self.length)
 
     def inference(self, x):
+        # Get the dign of wx - b
         return np.sign(float(np.dot(self.w.T, x)) - self.b)
 
     def train_classify(self, i):
+        # Get the output of wx - b
         return float(np.dot(self.w.T, self.x[i])) - self.b
 
     def get_error(self, i):
+        # Error is the difference between pred and label
         return self.train_classify(i) - self.y[i]
 
     def update(self, i2, i1):
+        # If i2 and i1 are not the same then use them to to find new a1 and a2 values, if the change is significant
+        # update a1 and a2 within the upper and lower bounds and also update w and b
         if i2 == i1:
+            # Don't want to update them if they are the same point
             return False
         a2 = self.alphas[i2]
         a1 = self.alphas[i1]
@@ -39,6 +45,7 @@ class SVM:
         e1 = self.get_error(i2)
         e2 = self.get_error(i1)
 
+        # Bounds calculation
         if y2 != y1:
             low_bound = max(0, a1 - a2)
             upper_bound = min(self.c, self.c + a1 - a2)
@@ -47,20 +54,28 @@ class SVM:
             upper_bound = min(self.c, a1 + a2)
         if low_bound == upper_bound:
             return False
+
+        # Kernel Calculations
         k11 = np.dot(x2, x2)
         k12 = np.dot(x2, x1)
         k22 = np.dot(x1, x1)
 
+        # Find learning rate
         eta = k11 + k22 - 2 * k12
 
+        # Get new a2 to be within given bounds
         a2_new = a1 + y1 * (e1 - e2) / eta
         a2_new = low_bound if a2_new < low_bound else a2_new
         a2_new = upper_bound if a2_new > upper_bound else a2_new
 
+        # If the change is not within the epsilon value then we skip it
         if abs(a2_new - a1) < self.epsilon * (a2_new + a1 + self.epsilon):
             return False
+
+        # Update a1 based on a2
         a1_new = a2 + y2 * y1 * (a1 - a2_new)
 
+        # Update B based on KKT conditions
         b1 = e1 + y2 * (a1_new - a2) * k11 + y1 * (a2_new - a1) * k12 + self.b
         b2 = e2 + y2 * (a1_new - a2) * k12 + y1 * (a2_new - a1) * k22 + self.b
         if (0 < a1_new) and (self.c > a1_new):
@@ -69,16 +84,18 @@ class SVM:
             new_b = b2
         else:
             new_b = (b1 + b2) / 2.0
-
         self.b = new_b
 
+        # Recalculate w
         self.w = self.w + y2 * (a1_new - a2) * x2 + y1 * (a2_new - a1) * x1
 
+        # Update alphas
         self.alphas[i2] = a1_new
         self.alphas[i1] = a2_new
         return True
 
     def get_i2(self, non_bound_indices, e1):
+        # Get i2 based on the maximum error
         i2 = -1
         if len(non_bound_indices) > 1:
             max_error = 0
@@ -91,6 +108,7 @@ class SVM:
         return i2
 
     def pick_x2_and_update(self, i1):
+        # Pick and x2 value and update the alphas using the update function
         y1 = self.y[i1]
         a1 = self.alphas[i1]
         e1 = self.get_error(i1)
@@ -110,13 +128,12 @@ class SVM:
                 return 1
         return 0
 
-    def error(self, i2):
-        return self.train_classify(i2) - self.y[i2]
-
     def get_non_bound_indexes(self):
+        # Figure out which indices are not in the kkt bounds
         return np.where(np.logical_and(self.alphas > 0, self.alphas < self.c))[0]
 
     def fit(self):
+        # Do the max num passes and update the svm weights
         num_passes = 0
         while num_passes < self.max_pass:
             num_passes += 1
@@ -125,10 +142,11 @@ class SVM:
         self.results()
 
     def results(self):
-        # w = self.w
-        # b = self.b
+        # Print classifications, weights, b, and accuracy
         x = self.x
         y = self.y
+        # w = self.w
+        # b = self.b
         # class_1_x = [x[0] for x, y in zip(x, y) if y == 1]
         # class_neg1_x = [x[0] for x, y in zip(x, y) if y == -1]
         # class_1_y = [x[1] for x, y in zip(x, y) if y == 1]
@@ -154,11 +172,16 @@ class SVM:
 
 
 def main():
-    with open('data_alt.txt', 'r') as f:
+    with open('SMO_Assignment_Dataset.txt', 'r') as f:
         data = f.read()
     x = []
     y = np.array([])
     for raw_row in data.split('\n'):
+        while "  " in raw_row:
+            raw_row = raw_row.replace("  ", " ")
+        if raw_row[0] == ' ':
+            raw_row = raw_row[1:]
+        raw_row = raw_row.replace("]", "")
         row = raw_row.split(" ")
         pair = np.array([float(row[0]), float(row[1])])
         x.append(pair)
