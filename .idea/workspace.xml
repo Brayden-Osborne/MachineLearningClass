@@ -12,45 +12,47 @@
     <session id="-9306803">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="11" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="csv" value="1" />
           <entry key="gitignore" value="2" />
-          <entry key="py" value="29" />
-          <entry key="txt" value="9" />
+          <entry key="py" value="40" />
+          <entry key="txt" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PLAIN_TEXT" value="12" />
-          <entry key="Python" value="29" />
+          <entry key="PLAIN_TEXT" value="13" />
+          <entry key="Python" value="40" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="323" />
-          <entry key="dummy" value="14" />
+          <entry key="dummy" value="17" />
           <entry key="gitignore" value="7" />
-          <entry key="py" value="11389" />
+          <entry key="py" value="12947" />
           <entry key="txt" value="132" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="153" />
-          <entry key="Python" value="11712" />
+          <entry key="PLAIN_TEXT" value="156" />
+          <entry key="Python" value="13270" />
         </counts>
       </usages-collector>
     </session>
@@ -60,24 +62,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Homework2/svm.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="190" column="13" lean-forward="true" selection-start-line="190" selection-start-column="13" selection-end-line="190" selection-end-column="13" />
-              <folding>
-                <element signature="e#4797#4809#0" />
-                <marker date="1604114133217" expanded="true" signature="655:661" ph="..." />
-              </folding>
-            </state>
-          </provider>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Homework3/ID3.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Homework2/SMO_Assignment_Dataset.txt">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Homework3/Bayes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="265" column="18" lean-forward="true" selection-start-line="265" selection-start-column="18" selection-end-line="265" selection-end-column="18" />
+            <state relative-caret-position="143">
+              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+              <folding>
+                <element signature="e#0#55#0" expanded="true" />
+                <marker date="1604524576524" expanded="true" signature="451:545" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -141,11 +139,16 @@
         <option value="$PROJECT_DIR$/Homework2/data_alt.txt" />
         <option value="$PROJECT_DIR$/Homework2/SMO_Assignment_Dataset.txt" />
         <option value="$PROJECT_DIR$/Homework2/svm.py" />
+        <option value="$PROJECT_DIR$/Homework2/output.txt" />
+        <option value="$PROJECT_DIR$/Homework3/ID3.py" />
+        <option value="$PROJECT_DIR$/Homework1/hw1.py" />
+        <option value="$PROJECT_DIR$/Homework3/Bayes.py" />
+        <option value="$PROJECT_DIR$/Homework3/read_dataset.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="157" />
+    <option name="x" value="155" />
     <option name="y" value="-15" />
     <option name="width" value="980" />
     <option name="height" value="1060" />
@@ -155,7 +158,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -173,10 +175,16 @@
               <item name="MachineLearningClass" type="462c0819:PsiDirectoryNode" />
               <item name="Homework2" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="MachineLearningClass" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MachineLearningClass" type="462c0819:PsiDirectoryNode" />
+              <item name="Homework3" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -185,6 +193,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\brayd\Documents\GitHub\MachineLearningClass\Homework3" />
       <recent name="C:\Users\brayd\Documents\GitHub\MachineLearningClass\Homework2" />
     </key>
   </component>
@@ -200,7 +209,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.svm">
+  <component name="RunManager" selected="Python.Bayes">
+    <configuration name="Bayes" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MachineLearningClass" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Homework3" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Homework3/Bayes.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Plot" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MachineLearningClass" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -255,7 +285,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Homework1/read_dataset.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\brayd\Documents\GitHub\MachineLearningClass\Homework1\hw1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -333,14 +363,15 @@
       <item itemvalue="Python.tyler_svm" />
       <item itemvalue="Python.online_example" />
       <item itemvalue="Python.svm" />
+      <item itemvalue="Python.Bayes" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Bayes" />
         <item itemvalue="Python.svm" />
         <item itemvalue="Python.svm" />
         <item itemvalue="Python.online_example" />
         <item itemvalue="Python.tyler_svm" />
-        <item itemvalue="Python.Plot" />
       </list>
     </recent_temporary>
   </component>
@@ -388,14 +419,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49799198" visible="true" weight="0.0892267" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.502008" side_tool="true" weight="0.0892267" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32867134" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4923077" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.28531468" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.21818182" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.51888114" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -435,6 +467,16 @@
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
+        <expression-string>-((x - mean)^2 / (2 * std^2))</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>(math.sqrt(2*np.pi)*std)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>self.x[i]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
@@ -466,21 +508,6 @@
       </expression>
       <expression>
         <expression-string>np.where(np.logical_and(self.alphas &gt; 0, self.alphas &lt; self.c))[0]</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>np.dot(x1, x2)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>np.dot(x1, x2.T)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>np.transpose(self.w) * x_vals</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -516,9 +543,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Homework2/data.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Homework2/data.csv" />
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -541,13 +566,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Homework2/pokemon.py" />
-    <entry file="file://$PROJECT_DIR$/Homework2/Plot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Homework2/Plot.py" />
     <entry file="file://D:/Software/Python/Lib/codecs.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
@@ -569,195 +588,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Homework2/data.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="265" column="9" selection-start-line="265" selection-start-column="9" selection-end-line="265" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Homework2/data2.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Homework1/read_dataset.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="786">
-          <caret line="144" selection-start-line="144" selection-end-line="144" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Homework2/online_example.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="234" lean-forward="true" selection-start-line="234" selection-end-line="234" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Homework2/data.txt" />
+    <entry file="file://$PROJECT_DIR$/Homework2/data2.txt" />
+    <entry file="file://$PROJECT_DIR$/Homework2/online_example.py" />
+    <entry file="file://$PROJECT_DIR$/Homework2/tyler_svm.py" />
+    <entry file="file://$PROJECT_DIR$/Homework2/data_2.txt" />
+    <entry file="file://$PROJECT_DIR$/Homework2/data_alt.txt" />
     <entry file="file://$PROJECT_DIR$/Homework2/svm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="34" selection-start-line="34" selection-end-line="39" selection-end-column="18" />
+        <state relative-caret-position="242">
+          <caret line="151" column="37" lean-forward="true" selection-start-line="151" selection-start-column="37" selection-end-line="151" selection-end-column="37" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <marker date="1604114133217" expanded="true" signature="655:661" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Homework2/tyler_svm.py">
+    <entry file="file://$PROJECT_DIR$/Homework2/output.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="20" column="17" lean-forward="true" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Homework2/data_2.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-813">
-          <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Homework2/data_alt.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="7" />
-          <caret line="6" column="1" selection-start-line="6" selection-end-line="6" selection-end-column="1" />
-          <caret line="10" column="1" selection-start-line="10" selection-end-line="10" selection-end-column="1" />
-          <caret line="14" column="2" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="2" />
-          <caret line="15" column="2" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="2" />
-          <caret line="15" column="6" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="6" />
-          <caret line="16" column="2" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="2" />
-          <caret line="24" column="4" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="4" />
-          <caret line="24" column="5" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="5" />
-          <caret line="28" column="6" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="6" />
-          <caret line="32" column="2" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="2" />
-          <caret line="37" column="2" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="2" />
-          <caret line="38" column="6" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="6" />
-          <caret line="43" column="5" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="5" />
-          <caret line="43" column="6" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="6" />
-          <caret line="44" column="7" selection-start-line="44" selection-start-column="6" selection-end-line="44" selection-end-column="7" />
-          <caret line="45" column="5" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="5" />
-          <caret line="46" column="4" selection-start-line="46" selection-start-column="3" selection-end-line="46" selection-end-column="4" />
-          <caret line="47" column="7" selection-start-line="47" selection-start-column="6" selection-end-line="47" selection-end-column="7" />
-          <caret line="54" column="3" selection-start-line="54" selection-start-column="2" selection-end-line="54" selection-end-column="3" />
-          <caret line="54" column="7" selection-start-line="54" selection-start-column="6" selection-end-line="54" selection-end-column="7" />
-          <caret line="57" column="6" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="6" />
-          <caret line="60" column="2" selection-start-line="60" selection-start-column="1" selection-end-line="60" selection-end-column="2" />
-          <caret line="64" column="6" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="6" />
-          <caret line="66" column="6" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="6" />
-          <caret line="72" column="7" selection-start-line="72" selection-start-column="6" selection-end-line="72" selection-end-column="7" />
-          <caret line="77" column="7" selection-start-line="77" selection-start-column="6" selection-end-line="77" selection-end-column="7" />
-          <caret line="78" column="6" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="6" />
-          <caret line="82" column="1" selection-start-line="82" selection-end-line="82" selection-end-column="1" />
-          <caret line="85" column="6" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="6" />
-          <caret line="87" column="4" selection-start-line="87" selection-start-column="3" selection-end-line="87" selection-end-column="4" />
-          <caret line="89" column="6" selection-start-line="89" selection-start-column="5" selection-end-line="89" selection-end-column="6" />
-          <caret line="90" column="6" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="6" />
-          <caret line="93" column="6" selection-start-line="93" selection-start-column="5" selection-end-line="93" selection-end-column="6" />
-          <caret line="96" column="2" selection-start-line="96" selection-start-column="1" selection-end-line="96" selection-end-column="2" />
-          <caret line="96" column="3" selection-start-line="96" selection-start-column="2" selection-end-line="96" selection-end-column="3" />
-          <caret line="97" column="6" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="6" />
-          <caret line="99" column="2" selection-start-line="99" selection-start-column="1" selection-end-line="99" selection-end-column="2" />
-          <caret line="100" column="3" selection-start-line="100" selection-start-column="2" selection-end-line="100" selection-end-column="3" />
-          <caret line="100" column="6" selection-start-line="100" selection-start-column="5" selection-end-line="100" selection-end-column="6" />
-          <caret line="101" column="1" selection-start-line="101" selection-end-line="101" selection-end-column="1" />
-          <caret line="103" column="6" selection-start-line="103" selection-start-column="5" selection-end-line="103" selection-end-column="6" />
-          <caret line="104" column="3" selection-start-line="104" selection-start-column="2" selection-end-line="104" selection-end-column="3" />
-          <caret line="104" column="6" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="6" />
-          <caret line="105" column="3" selection-start-line="105" selection-start-column="2" selection-end-line="105" selection-end-column="3" />
-          <caret line="110" column="1" selection-start-line="110" selection-end-line="110" selection-end-column="1" />
-          <caret line="111" column="3" selection-start-line="111" selection-start-column="2" selection-end-line="111" selection-end-column="3" />
-          <caret line="112" column="1" selection-start-line="112" selection-end-line="112" selection-end-column="1" />
-          <caret line="115" column="5" selection-start-line="115" selection-start-column="4" selection-end-line="115" selection-end-column="5" />
-          <caret line="116" column="6" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="6" />
-          <caret line="118" column="2" selection-start-line="118" selection-start-column="1" selection-end-line="118" selection-end-column="2" />
-          <caret line="119" column="2" selection-start-line="119" selection-start-column="1" selection-end-line="119" selection-end-column="2" />
-          <caret line="123" column="7" selection-start-line="123" selection-start-column="6" selection-end-line="123" selection-end-column="7" />
-          <caret line="124" column="3" selection-start-line="124" selection-start-column="2" selection-end-line="124" selection-end-column="3" />
-          <caret line="125" column="1" selection-start-line="125" selection-end-line="125" selection-end-column="1" />
-          <caret line="128" column="2" selection-start-line="128" selection-start-column="1" selection-end-line="128" selection-end-column="2" />
-          <caret line="134" column="2" selection-start-line="134" selection-start-column="1" selection-end-line="134" selection-end-column="2" />
-          <caret line="136" column="1" selection-start-line="136" selection-end-line="136" selection-end-column="1" />
-          <caret line="144" column="3" selection-start-line="144" selection-start-column="2" selection-end-line="144" selection-end-column="3" />
-          <caret line="146" column="5" selection-start-line="146" selection-start-column="4" selection-end-line="146" selection-end-column="5" />
-          <caret line="147" column="6" selection-start-line="147" selection-start-column="5" selection-end-line="147" selection-end-column="6" />
-          <caret line="149" column="2" selection-start-line="149" selection-start-column="1" selection-end-line="149" selection-end-column="2" />
-          <caret line="153" column="2" selection-start-line="153" selection-start-column="1" selection-end-line="153" selection-end-column="2" />
-          <caret line="156" column="6" selection-start-line="156" selection-start-column="5" selection-end-line="156" selection-end-column="6" />
-          <caret line="158" column="2" selection-start-line="158" selection-start-column="1" selection-end-line="158" selection-end-column="2" />
-          <caret line="158" column="6" selection-start-line="158" selection-start-column="5" selection-end-line="158" selection-end-column="6" />
-          <caret line="164" column="2" selection-start-line="164" selection-start-column="1" selection-end-line="164" selection-end-column="2" />
-          <caret line="166" column="2" selection-start-line="166" selection-start-column="1" selection-end-line="166" selection-end-column="2" />
-          <caret line="167" column="3" selection-start-line="167" selection-start-column="2" selection-end-line="167" selection-end-column="3" />
-          <caret line="171" column="5" selection-start-line="171" selection-start-column="4" selection-end-line="171" selection-end-column="5" />
-          <caret line="178" column="2" selection-start-line="178" selection-start-column="1" selection-end-line="178" selection-end-column="2" />
-          <caret line="181" column="2" selection-start-line="181" selection-start-column="1" selection-end-line="181" selection-end-column="2" />
-          <caret line="181" column="6" selection-start-line="181" selection-start-column="5" selection-end-line="181" selection-end-column="6" />
-          <caret line="181" column="7" selection-start-line="181" selection-start-column="6" selection-end-line="181" selection-end-column="7" />
-          <caret line="182" column="1" selection-start-line="182" selection-end-line="182" selection-end-column="1" />
-          <caret line="183" column="2" selection-start-line="183" selection-start-column="1" selection-end-line="183" selection-end-column="2" />
-          <caret line="185" column="6" selection-start-line="185" selection-start-column="5" selection-end-line="185" selection-end-column="6" />
-          <caret line="186" column="2" selection-start-line="186" selection-start-column="1" selection-end-line="186" selection-end-column="2" />
-          <caret line="186" column="6" selection-start-line="186" selection-start-column="5" selection-end-line="186" selection-end-column="6" />
-          <caret line="189" column="2" selection-start-line="189" selection-start-column="1" selection-end-line="189" selection-end-column="2" />
-          <caret line="189" column="4" selection-start-line="189" selection-start-column="3" selection-end-line="189" selection-end-column="4" />
-          <caret line="190" column="2" selection-start-line="190" selection-start-column="1" selection-end-line="190" selection-end-column="2" />
-          <caret line="190" column="3" selection-start-line="190" selection-start-column="2" selection-end-line="190" selection-end-column="3" />
-          <caret line="191" column="2" selection-start-line="191" selection-start-column="1" selection-end-line="191" selection-end-column="2" />
-          <caret line="191" column="3" selection-start-line="191" selection-start-column="2" selection-end-line="191" selection-end-column="3" />
-          <caret line="191" column="6" selection-start-line="191" selection-start-column="5" selection-end-line="191" selection-end-column="6" />
-          <caret line="192" column="5" selection-start-line="192" selection-start-column="4" selection-end-line="192" selection-end-column="5" />
-          <caret line="196" column="3" selection-start-line="196" selection-start-column="2" selection-end-line="196" selection-end-column="3" />
-          <caret line="201" column="3" selection-start-line="201" selection-start-column="2" selection-end-line="201" selection-end-column="3" />
-          <caret line="203" column="3" selection-start-line="203" selection-start-column="2" selection-end-line="203" selection-end-column="3" />
-          <caret line="204" column="3" selection-start-line="204" selection-start-column="2" selection-end-line="204" selection-end-column="3" />
-          <caret line="204" column="7" selection-start-line="204" selection-start-column="6" selection-end-line="204" selection-end-column="7" />
-          <caret line="206" column="6" selection-start-line="206" selection-start-column="5" selection-end-line="206" selection-end-column="6" />
-          <caret line="210" column="2" selection-start-line="210" selection-start-column="1" selection-end-line="210" selection-end-column="2" />
-          <caret line="218" column="1" selection-start-line="218" selection-end-line="218" selection-end-column="1" />
-          <caret line="220" column="1" selection-start-line="220" selection-end-line="220" selection-end-column="1" />
-          <caret line="222" column="1" selection-start-line="222" selection-end-line="222" selection-end-column="1" />
-          <caret line="223" column="3" selection-start-line="223" selection-start-column="2" selection-end-line="223" selection-end-column="3" />
-          <caret line="224" column="2" selection-start-line="224" selection-start-column="1" selection-end-line="224" selection-end-column="2" />
-          <caret line="224" column="4" selection-start-line="224" selection-start-column="3" selection-end-line="224" selection-end-column="4" />
-          <caret line="225" column="6" selection-start-line="225" selection-start-column="5" selection-end-line="225" selection-end-column="6" />
-          <caret line="226" column="2" selection-start-line="226" selection-start-column="1" selection-end-line="226" selection-end-column="2" />
-          <caret line="229" column="5" selection-start-line="229" selection-start-column="4" selection-end-line="229" selection-end-column="5" />
-          <caret line="230" column="3" selection-start-line="230" selection-start-column="2" selection-end-line="230" selection-end-column="3" />
-          <caret line="233" column="1" selection-start-line="233" selection-end-line="233" selection-end-column="1" />
-          <caret line="234" column="5" selection-start-line="234" selection-start-column="4" selection-end-line="234" selection-end-column="5" />
-          <caret line="241" column="6" selection-start-line="241" selection-start-column="5" selection-end-line="241" selection-end-column="6" />
-          <caret line="251" column="7" selection-start-line="251" selection-start-column="6" selection-end-line="251" selection-end-column="7" />
-          <caret line="252" column="3" selection-start-line="252" selection-start-column="2" selection-end-line="252" selection-end-column="3" />
-          <caret line="256" column="5" selection-start-line="256" selection-start-column="4" selection-end-line="256" selection-end-column="5" />
-          <caret line="257" column="3" selection-start-line="257" selection-start-column="2" selection-end-line="257" selection-end-column="3" />
-          <caret line="258" column="6" selection-start-line="258" selection-start-column="5" selection-end-line="258" selection-end-column="6" />
-          <caret line="259" column="5" selection-start-line="259" selection-start-column="4" selection-end-line="259" selection-end-column="5" />
-          <caret line="262" column="5" selection-start-line="262" selection-start-column="4" selection-end-line="262" selection-end-column="5" />
-          <caret line="263" column="7" selection-start-line="263" selection-start-column="6" selection-end-line="263" selection-end-column="7" />
+        <state relative-caret-position="656">
+          <caret line="271" column="33" selection-start-line="271" selection-start-column="33" selection-end-line="271" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Homework2/SMO_Assignment_Dataset.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="265" column="18" lean-forward="true" selection-start-line="265" selection-start-column="18" selection-end-line="265" selection-end-column="18" />
+        <state relative-caret-position="656">
+          <caret line="265" column="18" selection-start-line="265" selection-start-column="18" selection-end-line="265" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Homework2/svm.py">
+    <entry file="file://$PROJECT_DIR$/Homework1/hw1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="190" column="13" lean-forward="true" selection-start-line="190" selection-start-column="13" selection-end-line="190" selection-end-column="13" />
+        <state relative-caret-position="497">
+          <caret line="147" selection-start-line="147" selection-end-line="147" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Software/Python/Lib/site-packages/numpy/core/fromnumeric.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="3371" selection-start-line="3371" selection-end-line="3371" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Software/Python/Lib/site-packages/numpy/core/_methods.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="159" selection-start-line="159" selection-end-line="159" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Homework3/ID3.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Homework3/read_dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Homework3/Bayes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
           <folding>
-            <element signature="e#4797#4809#0" />
-            <marker date="1604114133217" expanded="true" signature="655:661" ph="..." />
+            <element signature="e#0#55#0" expanded="true" />
+            <marker date="1604524576524" expanded="true" signature="451:545" ph="..." />
           </folding>
         </state>
       </provider>
