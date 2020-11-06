@@ -12,47 +12,48 @@
     <session id="-9306803">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="11" />
+          <entry key="project.closed" value="13" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
-          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.13" value="2" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="11" />
+          <entry key="project.opened" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="csv" value="1" />
           <entry key="gitignore" value="2" />
-          <entry key="py" value="40" />
+          <entry key="py" value="44" />
           <entry key="txt" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="13" />
-          <entry key="Python" value="40" />
+          <entry key="Python" value="44" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="323" />
+          <entry key="Python Console" value="360" />
           <entry key="dummy" value="17" />
           <entry key="gitignore" value="7" />
-          <entry key="py" value="12947" />
+          <entry key="py" value="15506" />
           <entry key="txt" value="132" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="156" />
-          <entry key="Python" value="13270" />
+          <entry key="Python" value="15866" />
         </counts>
       </usages-collector>
     </session>
@@ -62,19 +63,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Homework3/ID3.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Homework3/Bayes.py">
+        <entry file="file://$PROJECT_DIR$/Homework3/ID3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+            <state relative-caret-position="149">
+              <caret line="80" selection-start-line="80" selection-end-line="80" />
               <folding>
                 <element signature="e#0#55#0" expanded="true" />
-                <marker date="1604524576524" expanded="true" signature="451:545" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Homework3/Bayes.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="62" column="24" lean-forward="true" selection-start-line="62" selection-start-column="24" selection-end-line="64" selection-end-column="64" />
+              <folding>
+                <element signature="e#0#55#0" expanded="true" />
+                <marker date="1604612920040" expanded="true" signature="95:1048" ph="..." />
+                <marker date="1604612920040" expanded="true" signature="593:949" ph="..." />
+                <marker date="1604612920040" expanded="true" signature="1350:1352" ph="..." />
               </folding>
             </state>
           </provider>
@@ -105,20 +115,20 @@
       <find>self.errors</find>
       <find>errors[</find>
       <find>compute_b</find>
-      <find>self.errors</find>
       <find>epsilon</find>
       <find>kernel</find>
       <find>self.kernel</find>
       <find>self.c</find>
       <find>first_heuristic</find>
       <find>update</find>
-      <find>print</find>
       <find>,</find>
       <find>pri</find>
       <find>7</find>
       <find>4</find>
       <find>error(</find>
       <find>self.e</find>
+      <find>print(</find>
+      <find>print</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -140,10 +150,10 @@
         <option value="$PROJECT_DIR$/Homework2/SMO_Assignment_Dataset.txt" />
         <option value="$PROJECT_DIR$/Homework2/svm.py" />
         <option value="$PROJECT_DIR$/Homework2/output.txt" />
-        <option value="$PROJECT_DIR$/Homework3/ID3.py" />
         <option value="$PROJECT_DIR$/Homework1/hw1.py" />
-        <option value="$PROJECT_DIR$/Homework3/Bayes.py" />
         <option value="$PROJECT_DIR$/Homework3/read_dataset.py" />
+        <option value="$PROJECT_DIR$/Homework3/Bayes.py" />
+        <option value="$PROJECT_DIR$/Homework3/ID3.py" />
       </list>
     </option>
   </component>
@@ -209,7 +219,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Bayes">
+  <component name="RunManager" selected="Python.ID3">
     <configuration name="Bayes" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MachineLearningClass" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -231,7 +241,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Plot" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="ID3" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MachineLearningClass" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -239,11 +249,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Homework2" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Homework3" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Homework2/Plot.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Homework3/ID3.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -359,19 +369,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.read_dataset" />
-      <item itemvalue="Python.Plot" />
       <item itemvalue="Python.tyler_svm" />
       <item itemvalue="Python.online_example" />
       <item itemvalue="Python.svm" />
       <item itemvalue="Python.Bayes" />
+      <item itemvalue="Python.ID3" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.ID3" />
         <item itemvalue="Python.Bayes" />
         <item itemvalue="Python.svm" />
         <item itemvalue="Python.svm" />
         <item itemvalue="Python.online_example" />
-        <item itemvalue="Python.tyler_svm" />
       </list>
     </recent_temporary>
   </component>
@@ -419,15 +429,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49799198" visible="true" weight="0.0892267" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.502008" side_tool="true" weight="0.0892267" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32867134" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.21818182" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.51888114" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.0979021" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.34405595" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -451,6 +460,20 @@
     <option name="LAST_COMMIT_MESSAGE" value="Plots and tests" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Homework3/ID3.py</url>
+          <line>86</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Homework3/ID3.py</url>
+          <line>80</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="self" />
@@ -466,6 +489,26 @@
       </expression>
     </expressions>
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>np.array(list(likelihoods[attribute_idx].prob_dict.values()))</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>[math.log2(prob) for prob in probs]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>disc_vals[1] = 1</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>disc_vals[idx] =1</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>-((x - mean)^2 / (2 * std^2))</expression-string>
         <language-id>Python</language-id>
@@ -488,26 +531,6 @@
       </expression>
       <expression>
         <expression-string>np.dot(self.w.T, self.x[i]) - self.b</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>float(np.dot(self.w.T, self.x[i])) - self.b</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>np.dot(self.w.T, self.x[i])) - self.b</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>float(np.dot(self.w.T, x)) - self.b</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>np.where(np.logical_and(self.alphas &gt; 0, self.alphas &lt; self.c))[0]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -598,9 +621,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="151" column="37" lean-forward="true" selection-start-line="151" selection-start-column="37" selection-end-line="151" selection-end-column="37" />
-          <folding>
-            <marker date="1604114133217" expanded="true" signature="655:661" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -639,23 +659,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Homework3/ID3.py">
+    <entry file="file://$PROJECT_DIR$/Homework3/GaussianBayes.py">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://D:/Software/Python/Lib/site-packages/numpy/lib/histograms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="677" column="19" selection-start-line="677" selection-start-column="19" selection-end-line="677" selection-end-column="19" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Homework3/read_dataset.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+        <state relative-caret-position="51">
+          <caret line="6" column="27" lean-forward="true" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/1383025636/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="488" column="4" selection-start-line="488" selection-start-column="4" selection-end-line="488" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Homework3/Bayes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+        <state relative-caret-position="187">
+          <caret line="62" column="24" lean-forward="true" selection-start-line="62" selection-start-column="24" selection-end-line="64" selection-end-column="64" />
           <folding>
             <element signature="e#0#55#0" expanded="true" />
-            <marker date="1604524576524" expanded="true" signature="451:545" ph="..." />
+            <marker date="1604612920040" expanded="true" signature="95:1048" ph="..." />
+            <marker date="1604612920040" expanded="true" signature="593:949" ph="..." />
+            <marker date="1604612920040" expanded="true" signature="1350:1352" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Homework3/ID3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="80" selection-start-line="80" selection-end-line="80" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
           </folding>
         </state>
       </provider>

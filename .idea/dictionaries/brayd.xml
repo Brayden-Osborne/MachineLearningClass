@@ -2,9 +2,13 @@
   <dictionary name="brayd">
     <words>
       <w>brayd</w>
+      <w>dataset</w>
+      <w>discretize</w>
       <w>pred</w>
+      <w>probs</w>
       <w>setosa</w>
       <w>simp</w>
+      <w>vals</w>
       <w>versicolor</w>
       <w>virginica</w>
     </words>
