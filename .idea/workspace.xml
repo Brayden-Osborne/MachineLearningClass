@@ -47,14 +47,14 @@
           <entry key="Python Console" value="360" />
           <entry key="dummy" value="17" />
           <entry key="gitignore" value="7" />
-          <entry key="py" value="19704" />
+          <entry key="py" value="21592" />
           <entry key="txt" value="132" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="156" />
-          <entry key="Python" value="20064" />
+          <entry key="Python" value="21952" />
         </counts>
       </usages-collector>
     </session>
@@ -67,14 +67,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Homework3/ID3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="64" column="19" lean-forward="true" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="29" />
+            <state relative-caret-position="236">
+              <caret line="40" column="112" selection-start-line="40" selection-start-column="112" selection-end-line="40" selection-end-column="112" />
               <folding>
                 <element signature="e#0#55#0" expanded="true" />
-                <marker date="1604869951334" expanded="true" signature="112:3758" ph="..." />
-                <marker date="1604869951334" expanded="true" signature="1852:1858" ph="..." />
-                <marker date="1604869951334" expanded="true" signature="3047:3053" ph="..." />
-                <marker date="1604869951334" expanded="true" signature="4925:4927" ph="..." />
+                <marker date="1604871611196" expanded="true" signature="112:4808" ph="..." />
+                <marker date="1604871611196" expanded="true" signature="1946:1952" ph="..." />
+                <marker date="1604871611196" expanded="true" signature="4023:4029" ph="..." />
+                <marker date="1604871611196" expanded="true" signature="5929:5931" ph="..." />
               </folding>
             </state>
           </provider>
@@ -174,8 +174,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
+    <option name="x" value="570" />
+    <option name="y" value="-30" />
     <option name="width" value="980" />
     <option name="height" value="1060" />
   </component>
@@ -214,7 +214,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HW3_AI" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -452,8 +452,8 @@
       <window_info id="Favorites" order="2" sideWeight="0.502008" side_tool="true" weight="0.0892267" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32867134" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33986014" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.23776224" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.44055945" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.05874126" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -728,14 +728,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Homework3/ID3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="64" column="19" lean-forward="true" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="29" />
+        <state relative-caret-position="236">
+          <caret line="40" column="112" selection-start-line="40" selection-start-column="112" selection-end-line="40" selection-end-column="112" />
           <folding>
             <element signature="e#0#55#0" expanded="true" />
-            <marker date="1604869951334" expanded="true" signature="112:3758" ph="..." />
-            <marker date="1604869951334" expanded="true" signature="1852:1858" ph="..." />
-            <marker date="1604869951334" expanded="true" signature="3047:3053" ph="..." />
-            <marker date="1604869951334" expanded="true" signature="4925:4927" ph="..." />
+            <marker date="1604871611196" expanded="true" signature="112:4808" ph="..." />
+            <marker date="1604871611196" expanded="true" signature="1946:1952" ph="..." />
+            <marker date="1604871611196" expanded="true" signature="4023:4029" ph="..." />
+            <marker date="1604871611196" expanded="true" signature="5929:5931" ph="..." />
           </folding>
         </state>
       </provider>
