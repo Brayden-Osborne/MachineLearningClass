@@ -38,7 +38,7 @@ def main():
     # split up test and training set
     test, train = split_test_train(data)
 
-    return train, test
+    return train.astype(float), test.astype(float)
 
 
 if __name__ == '__main__':

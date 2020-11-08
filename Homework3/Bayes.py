@@ -47,8 +47,8 @@ def main():
         for num_bins in [5, 10, 15, 20]:
             train, test = read_dataset()
             # Split the Data
-            setosa_samples = np.array([sample for sample in train if sample[4] == '1'])
-            not_setosa_samples = np.array([sample for sample in train if sample[4] == '0'])
+            setosa_samples = np.array([sample for sample in train if sample[4] == 1])
+            not_setosa_samples = np.array([sample for sample in train if sample[4] == 0])
 
             # Get Statistics
             set_hist, set_bins = get_prior_stats(setosa_samples, num_bins)
@@ -66,9 +66,9 @@ def main():
 
             correct = 0
             for sample in test:
-                set_feat_probs = [set_likelihoods[idx].get_prob(float(feat))
+                set_feat_probs = [set_likelihoods[idx].get_prob(feat)
                                   for idx, feat in enumerate(sample[0:3])]
-                not_set_feat_probs = [not_set_likelihoods[idx].get_prob(float(feat))
+                not_set_feat_probs = [not_set_likelihoods[idx].get_prob(feat)
                                       for idx, feat in enumerate(sample[0:3])]
 
                 raw_set_posterior = np.prod(set_feat_probs) / set_prior
