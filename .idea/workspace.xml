@@ -12,33 +12,34 @@
     <session id="-9306803">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="13" />
+          <entry key="project.closed" value="15" />
           <entry key="project.open.time.0" value="2" />
-          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.13" value="2" />
+          <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="13" />
+          <entry key="project.opened" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="csv" value="1" />
           <entry key="gitignore" value="2" />
-          <entry key="py" value="44" />
+          <entry key="py" value="51" />
           <entry key="txt" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="13" />
-          <entry key="Python" value="44" />
+          <entry key="Python" value="51" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -46,14 +47,14 @@
           <entry key="Python Console" value="360" />
           <entry key="dummy" value="17" />
           <entry key="gitignore" value="7" />
-          <entry key="py" value="15506" />
+          <entry key="py" value="18892" />
           <entry key="txt" value="132" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="156" />
-          <entry key="Python" value="15866" />
+          <entry key="Python" value="19252" />
         </counts>
       </usages-collector>
     </session>
@@ -66,10 +67,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Homework3/ID3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="80" selection-start-line="80" selection-end-line="80" />
+            <state relative-caret-position="272">
+              <caret line="139" column="18" lean-forward="true" selection-start-line="139" selection-start-column="18" selection-end-line="144" selection-end-column="9" />
               <folding>
                 <element signature="e#0#55#0" expanded="true" />
+                <marker date="1604867921424" expanded="true" signature="112:4097" ph="..." />
+                <marker date="1604867921424" expanded="true" signature="1909:2006" ph="..." />
+                <marker date="1604867921424" expanded="true" signature="3357:3363" ph="..." />
+                <marker date="1604867921424" expanded="true" signature="5548:5550" ph="..." />
               </folding>
             </state>
           </provider>
@@ -78,8 +83,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Homework3/Bayes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="62" column="24" lean-forward="true" selection-start-line="62" selection-start-column="24" selection-end-line="64" selection-end-column="64" />
+            <state relative-caret-position="283">
+              <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="90" selection-end-column="106" />
               <folding>
                 <element signature="e#0#55#0" expanded="true" />
                 <marker date="1604612920040" expanded="true" signature="95:1048" ph="..." />
@@ -129,6 +134,8 @@
       <find>self.e</find>
       <find>print(</find>
       <find>print</find>
+      <find>get_prob</find>
+      <find>discre</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -158,8 +165,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="155" />
-    <option name="y" value="-15" />
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
     <option name="width" value="980" />
     <option name="height" value="1060" />
   </component>
@@ -168,6 +175,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -194,7 +202,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -429,14 +436,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49799198" visible="true" weight="0.0892267" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.502008" side_tool="true" weight="0.0892267" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32867134" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.0979021" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.34405595" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.45734265" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.15104896" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -465,23 +473,34 @@
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Homework3/ID3.py</url>
           <line>86</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Homework3/ID3.py</url>
-          <line>80</line>
-          <option name="timeStamp" value="6" />
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="self" />
+        <watch expression="self.likelihoods[0]" />
+        <watch expression="__py_debug_temp_var_1343549946" />
+        <watch expression="root.children" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="breakpointCondition">
+      <expression>
+        <expression-string>len(new_node.data) == 0</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>new_node.data == None</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>i==27</expression-string>
         <language-id>Python</language-id>
@@ -489,6 +508,21 @@
       </expression>
     </expressions>
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>np.bincount(labels)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>self.data.shape[1] - 1</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>self.data.shape[0] - 1</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>np.array(list(likelihoods[attribute_idx].prob_dict.values()))</expression-string>
         <language-id>Python</language-id>
@@ -516,21 +550,6 @@
       </expression>
       <expression>
         <expression-string>(math.sqrt(2*np.pi)*std)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>self.x[i]</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>np.dot(self.w.T, self.x[i])</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>np.dot(self.w.T, self.x[i]) - self.b</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -594,13 +613,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
           <caret line="311" selection-start-line="311" selection-end-line="311" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
@@ -669,13 +681,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Homework3/read_dataset.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="6" column="27" lean-forward="true" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/1383025636/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
@@ -683,10 +688,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydevd_bundle/pydevd_frame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="766" selection-start-line="766" selection-end-line="766" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Software/Python/Lib/site-packages/numpy/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="213" selection-start-line="213" selection-end-line="213" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Homework3/Bayes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="62" column="24" lean-forward="true" selection-start-line="62" selection-start-column="24" selection-end-line="64" selection-end-column="64" />
+        <state relative-caret-position="283">
+          <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="90" selection-end-column="106" />
           <folding>
             <element signature="e#0#55#0" expanded="true" />
             <marker date="1604612920040" expanded="true" signature="95:1048" ph="..." />
@@ -696,12 +722,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Homework3/read_dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-98">
+          <caret line="6" column="27" lean-forward="true" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Homework3/ID3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="80" selection-start-line="80" selection-end-line="80" />
+        <state relative-caret-position="272">
+          <caret line="139" column="18" lean-forward="true" selection-start-line="139" selection-start-column="18" selection-end-line="144" selection-end-column="9" />
           <folding>
             <element signature="e#0#55#0" expanded="true" />
+            <marker date="1604867921424" expanded="true" signature="112:4097" ph="..." />
+            <marker date="1604867921424" expanded="true" signature="1909:2006" ph="..." />
+            <marker date="1604867921424" expanded="true" signature="3357:3363" ph="..." />
+            <marker date="1604867921424" expanded="true" signature="5548:5550" ph="..." />
           </folding>
         </state>
       </provider>
