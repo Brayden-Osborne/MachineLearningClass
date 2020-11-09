@@ -229,9 +229,7 @@ def bayes(num_bins):
     set_prior = len(setosa_samples) / len(train)
     not_set_prior = len(not_setosa_samples) / len(train)
 
-    correct = 0
-    truth = np.array([])
-    pred = np.array([])
+    truth, pred = np.array([]), np.array([])
     for sample in test:
         set_feat_probs = [set_likelihoods[idx].get_prob(feat)
                           for idx, feat in enumerate(sample[0:3])]
@@ -275,6 +273,20 @@ def id3(num_bins):
     return truth, pred
 
 
+def plot_f(i_record, b_record):
+    for classifier_name, record in zip(['Bayes', 'ID3'], [b_record, i_record]):
+        f_scores = []
+        print(classifier_name)
+        for bin_idx, num_bins in enumerate([5, 10, 15, 20]):
+            f = [get_stats(sample)['f'] for sample in record[num_bins]]
+            f_scores.append(np.mean(f))
+        plt.plot([5, 10, 15, 20], f_scores, label=f'{classifier_name} F Scores')
+    plt.legend()
+    plt.xlabel('Num Bins')
+    plt.ylabel('F Score')
+    plt.show()
+
+
 def get_stats(record):
     num_tp, num_tn, num_fp, num_fn = 0, 0, 0, 0
     for true, pred in zip(record[0], record[1]):
@@ -287,7 +299,8 @@ def get_stats(record):
         elif true != pred and true == 0:
             num_fp += 1
     length = len(record[0])
-    return {'tpr': num_tp/length, 'fpr': num_fp/length, 'tnr': num_tn/length, 'fnr': num_fn/length}
+    f = num_tp / (num_tp + .5*(num_fp + num_fn))
+    return {'f': f, 'tpr': num_tp/length, 'fpr': num_fp/length, 'tnr': num_tn/length, 'fnr': num_fn/length}
 
 
 def plot_accuracies(id3_record, bayes_record):
@@ -327,7 +340,7 @@ def main():
             i_bin_record[num_bins].append((i_true, i_pred))
             b_bin_record[num_bins].append((b_true, b_pred))
     # plot_accuracies(i_bin_record, b_bin_record)
-    i_stats = get_stats(b_bin_record[10][0])
+    plot_f(i_record=i_bin_record, b_record=b_bin_record)
     x=1
 
 if __name__ == '__main__':
