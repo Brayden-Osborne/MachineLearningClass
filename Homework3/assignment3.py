@@ -326,9 +326,6 @@ def plot_accuracies(id3_record, bayes_record):
     plt.show()
 
 
-    x=1
-
-
 def main():
     # 10 RANDOM SAMPLES FOR 4 DIFFERENT BINS
     i_bin_record = {key: [] for key in [5, 10, 15, 20]}
@@ -339,9 +336,9 @@ def main():
             b_true, b_pred = bayes(num_bins)
             i_bin_record[num_bins].append((i_true, i_pred))
             b_bin_record[num_bins].append((b_true, b_pred))
-    # plot_accuracies(i_bin_record, b_bin_record)
+    plot_accuracies(id3_record=i_bin_record, bayes_record=b_bin_record)
     plot_f(i_record=i_bin_record, b_record=b_bin_record)
-    x=1
+
 
 if __name__ == '__main__':
     main()
