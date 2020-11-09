@@ -277,6 +277,17 @@ def id3(num_bins):
 
 def get_stats(record):
     num_tp, num_tn, num_fp, num_fn = 0, 0, 0, 0
+    for true, pred in zip(record[0], record[1]):
+        if true == pred and true == 1:
+            num_tp += 1
+        elif true == pred and true == 0:
+            num_tn += 1
+        elif true != pred and true == 1:
+            num_fn += 1
+        elif true != pred and true == 0:
+            num_fp += 1
+    length = len(record[0])
+    return {'tpr': num_tp/length, 'fpr': num_fp/length, 'tnr': num_tn/length, 'fnr': num_fn/length}
 
 
 def plot_accuracies(id3_record, bayes_record):
@@ -317,7 +328,7 @@ def main():
             b_bin_record[num_bins].append((b_true, b_pred))
     # plot_accuracies(i_bin_record, b_bin_record)
     i_stats = get_stats(b_bin_record[10][0])
-
+    x=1
 
 if __name__ == '__main__':
     main()

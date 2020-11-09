@@ -48,14 +48,14 @@
           <entry key="Python Console" value="360" />
           <entry key="dummy" value="17" />
           <entry key="gitignore" value="7" />
-          <entry key="py" value="22937" />
+          <entry key="py" value="23276" />
           <entry key="txt" value="132" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="156" />
-          <entry key="Python" value="23297" />
+          <entry key="Python" value="23636" />
         </counts>
       </usages-collector>
     </session>
@@ -84,14 +84,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Homework3/assignment3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="53">
-              <caret line="277" column="22" lean-forward="true" selection-start-line="277" selection-start-column="22" selection-end-line="277" selection-end-column="22" />
+            <state relative-caret-position="206">
+              <caret line="329" selection-start-line="329" selection-end-line="329" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <element signature="e#481#1268#0" />
-                <marker date="1604939031995" expanded="true" signature="10895:10906" ph="..." />
-                <marker date="1604939031995" expanded="true" signature="11126:11917" ph="..." />
-                <marker date="1604939031995" expanded="true" signature="12250:12468" ph="..." />
+                <marker date="1604939874137" expanded="true" signature="10895:11373" ph="..." />
+                <marker date="1604939874137" expanded="true" signature="11593:12384" ph="..." />
+                <marker date="1604939874137" expanded="true" signature="12717:12942" ph="..." />
               </folding>
             </state>
           </provider>
@@ -463,7 +463,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49799198" visible="true" weight="0.0892267" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -499,13 +498,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Homework3/assignment3.py</url>
-          <line>304</line>
+          <line>314</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Homework3/assignment3.py</url>
-          <line>278</line>
-          <option name="timeStamp" value="14" />
+          <line>329</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -774,14 +773,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Homework3/assignment3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="277" column="22" lean-forward="true" selection-start-line="277" selection-start-column="22" selection-end-line="277" selection-end-column="22" />
+        <state relative-caret-position="206">
+          <caret line="329" selection-start-line="329" selection-end-line="329" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
             <element signature="e#481#1268#0" />
-            <marker date="1604939031995" expanded="true" signature="10895:10906" ph="..." />
-            <marker date="1604939031995" expanded="true" signature="11126:11917" ph="..." />
-            <marker date="1604939031995" expanded="true" signature="12250:12468" ph="..." />
+            <marker date="1604939874137" expanded="true" signature="10895:11373" ph="..." />
+            <marker date="1604939874137" expanded="true" signature="11593:12384" ph="..." />
+            <marker date="1604939874137" expanded="true" signature="12717:12942" ph="..." />
           </folding>
         </state>
       </provider>
