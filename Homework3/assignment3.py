@@ -244,14 +244,11 @@ def bayes(num_bins):
         set_posterior = raw_set_posterior / (raw_set_posterior + raw_not_set_posterior)
         not_set_posterior = raw_not_set_posterior / (raw_set_posterior + raw_not_set_posterior)
 
+        # GET LABELS
         label = 1 if set_posterior > not_set_posterior else 0
-        # if label == int(sample[4]):
-        #     correct += 1
         pred = np.append(pred, label)
         truth = np.append(truth, sample[4])
-    # accuracy = correct / len(test)
-    # bin_size_record[num_bins].append(accuracy)
-    return pred, truth
+    return truth, pred
 
 
 def id3(num_bins):
@@ -268,19 +265,18 @@ def id3(num_bins):
     root = Node(data=train, bins=bins_list, disc_bin_vals=disc_val_list, initial_entropy=initial_entropy)
     root.grow_tree()
 
-    # CALCULATE ACCURACY ON TEST SET
-    # correct_count = 0
+    # GET RESULTS
     truth = np.array([])
     pred = np.array([])
     for sample in test:
         pred_label = root.predict(sample)
         pred = np.append(pred, pred_label)
         truth = np.append(truth, sample[4])
-    #     if pred_label == sample[4]:
-    #         correct_count += 1
-    # accuracy = correct_count / len(test)
-    # bin_size_record[num_bins].append(accuracy)
     return truth, pred
+
+
+def get_stats(record):
+    num_tp, num_tn, num_fp, num_fn = 0, 0, 0, 0
 
 
 def plot_accuracies(id3_record, bayes_record):
@@ -289,40 +285,23 @@ def plot_accuracies(id3_record, bayes_record):
         mins, maxes, means = [], [], []
         print(classifier_name)
         for bin_idx, num_bins in enumerate([5, 10, 15, 20]):
-            min_acc = min(record[num_bins])
-            max_acc = max(record[num_bins])
-            mean_acc = np.mean(id3_record[num_bins])
-            mins.append(min_acc)
-            maxes.append(max_acc)
-            means.append(mean_acc)
+            accs = [sum(np.array(sample[0] == sample[1])) / len(sample[0]) for sample in record[num_bins]]
+            mins.append(min(accs))
+            maxes.append(max(accs))
+            means.append(np.mean(accs))
             print(f"{num_bins} Bins:"
-                  f"Min Acc:{min_acc:.2f} "
-                  f"Mean Acc:{mean_acc:.2f} "
-                  f"Max Acc:{max_acc:.2f}")
-
-    bayes_mins, bayes_maxes, bayes_means = [], [], []
-    print('BAYES')
-    for num_bins in [5, 10, 15, 20]:
-        bayes_min_acc = min(bayes_record[num_bins])
-        bayes_max_acc = max(bayes_record[num_bins])
-        bayes_mean_acc = np.mean(bayes_record[num_bins])
-        bayes_mins.append(bayes_min_acc)
-        bayes_maxes.append(bayes_max_acc)
-        bayes_means.append(bayes_mean_acc)
-        print(f"{num_bins} Bins:"
-              f"Min Acc:{bayes_min_acc:.2f} "
-              f"Mean Acc:{bayes_mean_acc:.2f} "
-              f"Max Acc:{bayes_max_acc:.2f}")
-    plt.plot([5, 10, 15, 20], mins, label='ID3 Min Acc')
-    plt.plot([5, 10, 15, 20], maxes, label='ID3 Max Acc')
-    plt.plot([5, 10, 15, 20], means, label='ID3 Mean Acc')
-    plt.plot([5, 10, 15, 20], bayes_mins, label='Bayes Min Acc')
-    plt.plot([5, 10, 15, 20], bayes_maxes, label='Bayes Max Acc')
-    plt.plot([5, 10, 15, 20], bayes_means, label='Bayes Mean Acc')
+                  f"Min Acc:{mins[-1]:.2f} "
+                  f"Mean Acc:{means[-1]:.2f} "
+                  f"Max Acc:{maxes[-1]:.2f}")
+        plt.plot([5, 10, 15, 20], mins, label=f'{classifier_name} Min Acc')
+        plt.plot([5, 10, 15, 20], maxes, label=f'{classifier_name}ID3 Max Acc')
+        plt.plot([5, 10, 15, 20], means, label=f'{classifier_name}ID3 Mean Acc')
     plt.legend()
     plt.xlabel('Num Bins')
     plt.ylabel('Accuracy')
     plt.show()
+
+
     x=1
 
 
@@ -336,7 +315,8 @@ def main():
             b_true, b_pred = bayes(num_bins)
             i_bin_record[num_bins].append((i_true, i_pred))
             b_bin_record[num_bins].append((b_true, b_pred))
-    plot_accuracies(i_bin_record, b_bin_record)
+    # plot_accuracies(i_bin_record, b_bin_record)
+    i_stats = get_stats(b_bin_record[10][0])
 
 
 if __name__ == '__main__':
