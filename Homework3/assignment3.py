@@ -1,9 +1,15 @@
+"""
+Assignment 3: Brayden Osborne, Tyler Hilbert, Matthew Terry
+"""
+
 import numpy as np
 import math
 import copy
 import csv
 from matplotlib import pyplot as plt
 
+
+################################# General Functions #################################
 
 def split_test_train(data):
     test_split = np.random.choice(len(data), size=int(len(data)*.2), replace=False)
@@ -15,15 +21,12 @@ def split_test_train(data):
 
 
 def read_dataset():
-    header = None
     data = []
 
     # UPDATE PATH - WILL BREAK IF YOU HAVE NOT SET THE CORRECT PATH
     iris_data_path = 'iris_data.csv'
 
     label_2_id = {'Iris-setosa': 1, 'Iris-versicolor': 0, 'Iris-virginica': 0}
-    id_2_label = {1: 'Setosa', 0: 'NotSetosa'}
-
     with open(iris_data_path, 'r') as f:
         tmp = csv.reader(f)
         for idx, row in enumerate(tmp):
@@ -40,6 +43,28 @@ def read_dataset():
     test, train = split_test_train(data)
 
     return train.astype(float), test.astype(float)
+
+
+def discretize_dataset(train, num_bins):
+    # BIN THE DATA USING HISTOGRAM
+    train_bins = []
+    for feature_idx in range(4):
+        features = train[:, feature_idx]
+        hist, bin_vals = np.histogram(features, bins=num_bins)
+        train_bins.append(bin_vals)
+
+    # CALCULATE THE DISCRETIZE VALUES BASED ON THE BINS
+    bins_list, disc_val_list = [], []
+    for feat_idx, feat_bins in enumerate(train_bins):
+        disc_vals = [(feat_bins[idx] + feat_bins[idx + 1]) / 2 for idx in range(len(feat_bins) - 1)]
+        bins_list.append(feat_bins)
+        disc_val_list.append(disc_vals)
+        for sample in train:
+            sample[feat_idx] = discretize(sample[feat_idx], feat_bins)
+    return bins_list, disc_val_list, train
+
+
+################################# Naive Bayes #################################
 
 
 class Likelihoods:
@@ -79,6 +104,65 @@ def get_prior_stats(dataset, num_bins):
         hists.append(hist)
         bins.append(bin_vals)
     return hists, bins
+
+
+def get_gaussian(x, mean, std):
+    if std == 0:
+        std = .0000000001
+    return (1/(math.sqrt(2*np.pi)*std)) * math.exp(-(pow(x - mean, 2) / (2 * pow(std,2))))
+
+
+def get_prior_dist_stats(dataset):
+    means = np.zeros(dataset.shape[1] - 1)
+    stddevs = np.zeros(dataset.shape[1] - 1)
+    for feature_idx in range(4):
+        features = dataset[:, feature_idx].astype(float)
+        means[feature_idx] = np.mean(features)
+        stddevs[feature_idx] = np.std(features)
+    return means, stddevs
+
+
+def bayes(num_bins, train, test):
+    train = copy.deepcopy(train)
+    test = copy.deepcopy(test)
+    # train, test = read_dataset()
+    bins_list, disc_val_list, train = discretize_dataset(train, num_bins)
+    # Split the Data
+    setosa_samples = np.array([sample for sample in train if sample[4] == 1])
+    not_setosa_samples = np.array([sample for sample in train if sample[4] == 0])
+
+    # Get Priors
+    set_prior = len(setosa_samples) / len(train)
+    not_set_prior = len(not_setosa_samples) / len(train)
+
+    # Get Statistics
+    set_mean, set_std = get_prior_dist_stats(setosa_samples)
+    not_set_mean, not_set_std = get_prior_dist_stats(not_setosa_samples)
+
+    truth, pred = np.array([]), np.array([])
+    for sample in test:
+        # Use the binned data to figure out the probability of data falling into a valid bin for setosa or non-setosa
+        set_feat_probs = [get_gaussian(float(feat), set_mean[idx], set_std[idx]) for idx, feat in
+                          enumerate(sample[0:3])]
+        not_set_feat_probs = [get_gaussian(float(feat), not_set_mean[idx], not_set_std[idx]) for idx, feat in
+                              enumerate(sample[0:3])]
+
+        # Calculate Posteriors
+        raw_set_posterior = np.prod(set_feat_probs) / set_prior
+        raw_not_set_posterior = np.prod(not_set_feat_probs) / not_set_prior
+
+        # Weight Posteriors
+        set_posterior = raw_set_posterior / (raw_set_posterior + raw_not_set_posterior)
+        not_set_posterior = raw_not_set_posterior / (raw_set_posterior + raw_not_set_posterior)
+
+        # GET LABELS
+        label = 1 if set_posterior > not_set_posterior else 0
+        pred = np.append(pred, label)
+        truth = np.append(truth, sample[4])
+    return truth, pred
+
+
+################################# ID3 #################################
 
 
 class Node:
@@ -190,68 +274,9 @@ def discretize(x, bins):
         return (bins[-2] + bins[-1]) / 2
 
 
-def discretize_dataset(train, num_bins):
-    # BIN THE DATA USING HISTOGRAM
-    train_bins = []
-    for feature_idx in range(4):
-        features = train[:, feature_idx]
-        hist, bin_vals = np.histogram(features, bins=num_bins)
-        train_bins.append(bin_vals)
-
-    # CALCULATE THE DISCRETIZE VALUES BASED ON THE BINS
-    bins_list, disc_val_list = [], []
-    for feat_idx, feat_bins in enumerate(train_bins):
-        disc_vals = [(feat_bins[idx] + feat_bins[idx + 1]) / 2 for idx in range(len(feat_bins) - 1)]
-        bins_list.append(feat_bins)
-        disc_val_list.append(disc_vals)
-        for sample in train:
-            sample[feat_idx] = discretize(sample[feat_idx], feat_bins)
-    return bins_list, disc_val_list, train
-
-
-def bayes(num_bins):
-    train, test = read_dataset()
-    # Split the Data
-    setosa_samples = np.array([sample for sample in train if sample[4] == 1])
-    not_setosa_samples = np.array([sample for sample in train if sample[4] == 0])
-
-    # Get Statistics
-    set_hist, set_bins = get_prior_stats(setosa_samples, num_bins)
-    not_set_hist, not_set_bins = get_prior_stats(not_setosa_samples, num_bins)
-
-    # Get Class Likelihoods
-    set_likelihoods = [Likelihoods(feat_hist, feat_bins)
-                       for feat_hist, feat_bins in zip(set_hist, set_bins)]
-    not_set_likelihoods = [Likelihoods(feat_hist, feat_bins)
-                           for feat_hist, feat_bins in zip(not_set_hist, not_set_bins)]
-
-    # Get Priors
-    set_prior = len(setosa_samples) / len(train)
-    not_set_prior = len(not_setosa_samples) / len(train)
-
-    truth, pred = np.array([]), np.array([])
-    for sample in test:
-        set_feat_probs = [set_likelihoods[idx].get_prob(feat)
-                          for idx, feat in enumerate(sample[0:3])]
-        not_set_feat_probs = [not_set_likelihoods[idx].get_prob(feat)
-                              for idx, feat in enumerate(sample[0:3])]
-
-        raw_set_posterior = np.prod(set_feat_probs) / set_prior
-        raw_not_set_posterior = np.prod(not_set_feat_probs) / not_set_prior
-
-        set_posterior = raw_set_posterior / (raw_set_posterior + raw_not_set_posterior)
-        not_set_posterior = raw_not_set_posterior / (raw_set_posterior + raw_not_set_posterior)
-
-        # GET LABELS
-        label = 1 if set_posterior > not_set_posterior else 0
-        pred = np.append(pred, label)
-        truth = np.append(truth, sample[4])
-    return truth, pred
-
-
-def id3(num_bins):
-    # GET AND DISCRETIZE RANDOM TRAIN SPLIT
-    train, test = read_dataset()
+def id3(num_bins, train, test):
+    train = copy.deepcopy(train)
+    test = copy.deepcopy(test)
     bins_list, disc_val_list, train = discretize_dataset(train, num_bins)
 
     # GET INITIAL ENTROPY
@@ -273,6 +298,44 @@ def id3(num_bins):
     return truth, pred
 
 
+################################# Metric Plotting #################################
+
+def plot_roc(i_record, b_record):
+    for classifier_name, record in zip(['Bayes', 'ID3'], [b_record, i_record]):
+        # roc = []
+        print(classifier_name)
+        for bin_idx, num_bins in enumerate([5, 10, 15, 20]):
+            tprs = [get_stats(sample)['tpr'] for sample in record[num_bins]]
+            fprs = [get_stats(sample)['fpr'] for sample in record[num_bins]]
+            tpr = np.mean(tprs)
+            fpr = np.mean(fprs)
+            # print(tpr)
+            plt.plot([0, fpr, 1], [0, tpr, 1], label=f'{classifier_name} {num_bins} bins ROC Scores')
+    plt.legend()
+    plt.title("ROC Points as a function of Bin Size")
+    plt.xlabel('FPR')
+    plt.ylabel('TPR')
+    plt.show()
+
+
+def plot_f_comparison(test_record, truth_record, title, test_name, truth_name):
+    # for classifier_name, record in zip(['Bayes', 'ID3'], [b_record, i_record]):
+    f_scores = []
+    # print(classifier_name)
+    for bin_idx, num_bins in enumerate([5, 10, 15, 20]):
+        tmp_f = []
+        for test_sample, truth_sample in zip(test_record[num_bins], truth_record[num_bins]):
+            sample = (truth_sample[1], test_sample[1])
+            tmp_f.append(get_stats(sample)['f'])
+        f_scores.append(np.mean(tmp_f))
+    plt.plot([5, 10, 15, 20], f_scores, label=f'{test_name} vs {truth_name} F Scores')
+    plt.legend()
+    plt.title(title)
+    plt.xlabel('Num Bins')
+    plt.ylabel('F Score')
+    plt.show()
+
+
 def plot_f(i_record, b_record):
     for classifier_name, record in zip(['Bayes', 'ID3'], [b_record, i_record]):
         f_scores = []
@@ -282,6 +345,7 @@ def plot_f(i_record, b_record):
             f_scores.append(np.mean(f))
         plt.plot([5, 10, 15, 20], f_scores, label=f'{classifier_name} F Scores')
     plt.legend()
+    plt.title('F-Measures vs Ground Truth')
     plt.xlabel('Num Bins')
     plt.ylabel('F Score')
     plt.show()
@@ -298,9 +362,10 @@ def get_stats(record):
             num_fn += 1
         elif true != pred and true == 0:
             num_fp += 1
-    length = len(record[0])
     f = num_tp / (num_tp + .5*(num_fp + num_fn))
-    return {'f': f, 'tpr': num_tp/length, 'fpr': num_fp/length, 'tnr': num_tn/length, 'fnr': num_fn/length}
+    if num_tp == 0 and num_fn == 0:
+        return {'f': f, 'tpr': 0, 'fpr': num_fp / (num_fp + num_tn)}
+    return {'f': f, 'tpr': num_tp/(num_tp + num_fn), 'fpr': num_fp/(num_fp + num_tn)}
 
 
 def plot_accuracies(id3_record, bayes_record):
@@ -321,6 +386,7 @@ def plot_accuracies(id3_record, bayes_record):
         plt.plot([5, 10, 15, 20], maxes, label=f'{classifier_name}ID3 Max Acc')
         plt.plot([5, 10, 15, 20], means, label=f'{classifier_name}ID3 Mean Acc')
     plt.legend()
+    plt.title('Accuracy as a function of Bin Size')
     plt.xlabel('Num Bins')
     plt.ylabel('Accuracy')
     plt.show()
@@ -331,13 +397,20 @@ def main():
     i_bin_record = {key: [] for key in [5, 10, 15, 20]}
     b_bin_record = {key: [] for key in [5, 10, 15, 20]}
     for random_sample in range(10):
+        # GET AND DISCRETIZE RANDOM TRAIN SPLIT
+        train, test = read_dataset()
         for num_bins in [5, 10, 15, 20]:
-            i_true, i_pred = id3(num_bins)
-            b_true, b_pred = bayes(num_bins)
+            i_true, i_pred = id3(num_bins, train, test)
+            b_true, b_pred = bayes(num_bins, train, test)
             i_bin_record[num_bins].append((i_true, i_pred))
             b_bin_record[num_bins].append((b_true, b_pred))
     plot_accuracies(id3_record=i_bin_record, bayes_record=b_bin_record)
     plot_f(i_record=i_bin_record, b_record=b_bin_record)
+    plot_roc(i_record=i_bin_record, b_record=b_bin_record)
+    plot_f_comparison(truth_record=i_bin_record, test_record=b_bin_record, title='Bayes compared to ID3 as ground truth',
+                    truth_name='ID3', test_name='Naive Bayes')
+    plot_f_comparison(truth_record=b_bin_record, test_record=i_bin_record, title='ID3 compared to Bayes as ground truth',
+                    truth_name='Naive Bayes', test_name='ID3')
 
 
 if __name__ == '__main__':

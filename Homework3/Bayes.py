@@ -1,5 +1,8 @@
 from Homework3.read_dataset import main as read_dataset
 import numpy as np
+from Homework3.read_dataset import main as read_dataset
+import numpy as np
+import math
 
 
 class Likelihoods:
@@ -30,6 +33,16 @@ class Likelihoods:
         return self.prob_dict[disc_x]
 
 
+def get_prior_dist_stats(dataset):
+    means = np.zeros(dataset.shape[1] - 1)
+    stddevs = np.zeros(dataset.shape[1] - 1)
+    for feature_idx in range(4):
+        features = dataset[:, feature_idx].astype(float)
+        means[feature_idx] = np.mean(features)
+        stddevs[feature_idx] = np.std(features)
+    return means, stddevs
+
+
 def get_prior_stats(dataset, num_bins):
     hists = []
     bins = []
@@ -40,6 +53,8 @@ def get_prior_stats(dataset, num_bins):
         bins.append(bin_vals)
     return hists, bins
 
+def get_gaussian(x, mean, std):
+    return (1/(math.sqrt(2*np.pi)*std)) * math.exp(-(pow(x - mean, 2) / (2 * pow(std,2))))
 
 def main():
     bin_size_record = {key: [] for key in [5, 10, 15, 20]}
@@ -64,12 +79,21 @@ def main():
             set_prior = len(setosa_samples) / len(train)
             not_set_prior = len(not_setosa_samples) / len(train)
 
+            # Get Statistics
+            set_mean, set_std = get_prior_dist_stats(setosa_samples)
+            not_set_mean, not_set_std = get_prior_dist_stats(not_setosa_samples)
+
             correct = 0
             for sample in test:
-                set_feat_probs = [set_likelihoods[idx].get_prob(feat)
-                                  for idx, feat in enumerate(sample[0:3])]
-                not_set_feat_probs = [not_set_likelihoods[idx].get_prob(feat)
-                                      for idx, feat in enumerate(sample[0:3])]
+                # set_feat_probs = [set_likelihoods[idx].get_prob(feat)
+                #                   for idx, feat in enumerate(sample[0:3])]
+                # not_set_feat_probs = [not_set_likelihoods[idx].get_prob(feat)
+                #                       for idx, feat in enumerate(sample[0:3])]
+
+                set_feat_probs = [get_gaussian(float(feat), set_mean[idx], set_std[idx]) for idx, feat in
+                                  enumerate(sample[0:3])]
+                not_set_feat_probs = [get_gaussian(float(feat), not_set_mean[idx], not_set_std[idx]) for idx, feat in
+                                      enumerate(sample[0:3])]
 
                 raw_set_posterior = np.prod(set_feat_probs) / set_prior
                 raw_not_set_posterior = np.prod(not_set_feat_probs) / not_set_prior
