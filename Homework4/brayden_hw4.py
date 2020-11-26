@@ -1,7 +1,8 @@
-from Homework4.createDataset import read_dataset
+from createDataset import read_dataset
 import numpy as np
-from mpl_toolkits import mplot3d
+import plotly.graph_objects as go
 import matplotlib.pyplot as plt
+from mpl_toolkits import mplot3d
 
 
 class Model:
@@ -13,6 +14,7 @@ class Model:
         self.t = t
         self.d_low = d_low
         self.d_high = d_high
+        self.error = np.zeros(num_epochs)
 
     def plot_surface(self):
         x1s = []
@@ -33,10 +35,44 @@ class Model:
         ax.set_title('Network Decision Boundary')
         plt.show()
 
+    def plot_decision_surface(self):
+        x1s = []
+        x2s = []
+        for x1val in range(-100, 100):
+            for x2val in range(-100, 100):
+                x1s.append(x1val)
+                x2s.append(x2val)
+        inputs = np.array([np.array([1, x1, x2]) for x1, x2 in zip(x1s, x2s)])
+
+        outputs = np.array(list(map(lambda x: self.predict(x), inputs)))
+
+        fig = go.Figure(data=[go.Surface(z=outputs.reshape((200,200)))])
+
+        fig.update_layout(title='Mt Bruno Elevation', autosize=False,
+                          width=500, height=500,
+                          margin=dict(l=65, r=50, b=65, t=90))
+
+        fig.show()
+
+        if save:
+            fig.write_image(name + ".png")
+
+    def plot_error(self, save, name=""):
+        plt.plot(self.error)
+        plt.xlabel("Epoch")
+        plt.ylabel("Error")
+        if save:
+            plt.savefig( name + '.png')
+        plt.show()
+
+    def predict(self, x):
+        return np.sign(np.matmul(np.transpose(self.weights), x))
+
     def inference(self, x):
         ret = np.zeros(len(x))
         for idx, feat in enumerate(x):
             ret[idx] = np.matmul(np.transpose(self.weights), feat)
+            
         return np.sign(ret)
 
     def get_error(self, preds, trues):
@@ -73,6 +109,7 @@ class Model:
         for epoch in range(self.num_epochs):
             pred = self.inference(x)
             new_error = self.get_error(pred, labels)
+            self.error[epoch] = new_error
             print(new_error)
             ignore_batch = self.decay_lr(old_error, new_error)
             if not ignore_batch:
@@ -82,6 +119,7 @@ class Model:
             print(acc)
             # if epoch in [4, 9, 49, 99]:
             #     self.plot_surface()
+
 
     def fit_stochastic(self, x, labels):
         for epoch in range(self.num_epochs):
@@ -95,9 +133,9 @@ class Model:
             pred = self.inference(np.array(x))
             acc = sum(np.array(np.sign(pred) == labels)) / len(labels)
             print(acc)
-            self.decay_lr()
-            if epoch in [4, 9, 49, 99]:
-                self.plot_surface()
+            #self.decay_lr()
+            #if epoch in [4, 9, 49, 99]:
+            #    self.plot_surface()
 
 
 def main():
@@ -117,7 +155,13 @@ def main():
     # Adaptive
     # model = Model(num_epochs=100, initial_lr=.001, t=1.03, d_low=.95, d_high=1.05)
 
-    model.fit_batch(features, labels)
+    #model.fit_batch(features, labels)
+    model.fit_stochastic(features, labels)
+    # Plot Decision Surface
+    #model.plot_decision_surface()
+
+    # Plot and save Error
+    model.plot_error(False)
 
 
 

@@ -3,6 +3,7 @@ from mpl_toolkits import mplot3d
 import matplotlib.pyplot as plt
 
 def deltaRule():
+
     pass
 
 def getData(batch):
@@ -11,6 +12,8 @@ def getData(batch):
     pass
 
 def runModel(x1,x2,w1,w2):
+    x1*w1 + x2*w2 +
+
     pass
 
 if __name__ == "__main__":
