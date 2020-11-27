@@ -2,12 +2,15 @@ from createDataset import read_dataset
 import numpy as np
 import plotly.graph_objects as go
 import matplotlib.pyplot as plt
+import time
+
 from mpl_toolkits import mplot3d
 
 
 class Model:
     def __init__(self, num_epochs=10, initial_lr=.00001, lr_decay_rate=None, t=None, d_low=None, d_high=None):
         self.weights = np.array([.5, .5, .5])
+        self.oldWeights = self.weights
         self.num_epochs = num_epochs
         self.learning_rate = initial_lr
         self.lr_decay_rate = lr_decay_rate
@@ -15,6 +18,7 @@ class Model:
         self.d_low = d_low
         self.d_high = d_high
         self.error = np.zeros(num_epochs)
+        self.count = 0
 
     def plot_surface(self):
         x1s = []
@@ -89,7 +93,6 @@ class Model:
                 deltas[idx] += (true - np.sign(pred)) * x_val
         deltas = self.learning_rate * deltas
         self.weights = self.weights + deltas
-        x=1
 
     def decay_lr(self, prev_error, new_error):
         if self.lr_decay_rate:
@@ -103,7 +106,7 @@ class Model:
                 self.learning_rate = self.learning_rate * self.d_high
                 return False
         return False
-
+    
     def fit_batch(self, x, labels):
         old_error = 99999999999999999
         for epoch in range(self.num_epochs):
@@ -120,6 +123,34 @@ class Model:
             # if epoch in [4, 9, 49, 99]:
             #     self.plot_surface()
 
+    def fit_batch_adaptive(self, x, labels):
+        old_error = 99999999999999999
+        for epoch in range(self.num_epochs):
+            pred = self.inference(x)
+            new_error = self.get_error(pred, labels)
+            self.error[epoch] = new_error
+            #print(new_error)
+            ignore_batch = self.decay_lr(old_error, new_error)
+            if not ignore_batch:
+                print(self.learning_rate)
+                self.oldWeights = self.weights
+                self.update_batch(pred, labels, x)
+                old_error = new_error
+            else:
+                print(self.learning_rate)
+                self.weights = self.oldWeights
+                self.update_batch(pred, labels, x)
+            acc = sum(np.array(np.sign(pred) == labels)) / len(labels)
+            # if acc > .995:
+            #     self.count += 1
+            #     print(self.count)
+            #     break
+            # else:
+            #     self.count += 1
+            print(acc)
+            # if epoch in [4, 9, 49, 99]:
+            #     self.plot_surface()
+
 
     def fit_stochastic(self, x, labels):
         for epoch in range(self.num_epochs):
@@ -128,17 +159,27 @@ class Model:
                 nplab = np.array([label])
                 pred = self.inference(npsamp)
                 error = self.get_error(pred, nplab)
+                print(error)
                 self.update_batch(pred, nplab, npsamp)
+            self.error[epoch] = error
             # TEST
             pred = self.inference(np.array(x))
             acc = sum(np.array(np.sign(pred) == labels)) / len(labels)
-            print(acc)
+            # if acc > .995:
+            #
+            #     self.count += len(x)
+            #     print(self.count)
+            #     break
+            # else:
+            #     self.count += len(x)
+            #print(acc)
             #self.decay_lr()
             #if epoch in [4, 9, 49, 99]:
             #    self.plot_surface()
 
 
 def main():
+    tic = time.perf_counter()
     dataset_list = read_dataset()
     dataset_array = np.array(dataset_list)
     ones = np.expand_dims(np.ones(len(dataset_array)), axis=1)
@@ -150,16 +191,17 @@ def main():
     model = Model(num_epochs=100, initial_lr=.001)
     #
     # # Decay
-    # model = Model(num_epochs=100, initial_lr=.001, lr_decay_rate=.95)
+    #model = Model(num_epochs=100, initial_lr=.001, lr_decay_rate=.95)
 
     # Adaptive
-    # model = Model(num_epochs=100, initial_lr=.001, t=1.03, d_low=.95, d_high=1.05)
+    model = Model(num_epochs=200, initial_lr=.5, t=1.03, d_low=.9, d_high=1.2)
 
-    #model.fit_batch(features, labels)
-    model.fit_stochastic(features, labels)
+    model.fit_batch_adaptive(features, labels)
+    #model.fit_stochastic(features, labels)
     # Plot Decision Surface
     #model.plot_decision_surface()
-
+    toc = time.perf_counter()
+    print(f"ran in {toc - tic:0.4f} seconds")
     # Plot and save Error
     model.plot_error(False)
 
