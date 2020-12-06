@@ -1,6 +1,9 @@
+# Homework 5
+# Brayden Osborne, Tyler Hilbert, Matthew Terry
+
 import csv
 import numpy as np
-import matplotlib as plt
+import matplotlib.pyplot as plt
 
 
 def read_dataset():
@@ -37,8 +40,7 @@ def split_dataset(dataset, labels):
 
 
 class NeuralNetwork:
-    def __init__(self, num_feats=4, hidden_layer_size=None, hidden_activation="tanh",
-                 final_activation="sigmoid", learning_rate=.001):
+    def __init__(self, num_feats, hidden_layer_size, hidden_activation, final_activation, learning_rate):
         self.hidden_activation = get_activation_function(hidden_activation)
         self.hidden_activation_derivative = get_derivative_activation_function(hidden_activation)
         self.final_activation = get_activation_function(final_activation)
@@ -81,16 +83,21 @@ class NeuralNetwork:
         self.hidden_bias = self.hidden_bias - self.learning_rate * hidden_bias_change.T
 
     def calc_loss(self, y_true, y_pred):
+        """
+        Calculate the MSE loss
+        """
         error = 1/2 * pow(y_true - y_pred, 2)
         avg_loss = np.squeeze(np.sum(error) / len(y_true))
         return avg_loss
 
     def forward(self, input_data):
         x = np.copy(input_data)
+
         hidden_output = np.dot(self.hidden_weights.T, x.T) + self.hidden_bias.T
         activated_h_o = self.hidden_activation(np.copy(hidden_output))
+
         final_output = np.dot(self.final_weights, activated_h_o) + self.final_bias.T
-        activated_f_o = self.final_activation(final_output)
+        activated_f_o = self.final_activation(np.copy(final_output))
         return hidden_output, activated_h_o, final_output, activated_f_o
 
     def inference(self, data):
@@ -127,16 +134,41 @@ def main():
     dataset = np.vstack(dataset)
     labels = np.array(labels)
     train_ds, train_labels, val_ds, val_labels, test_ds, test_labels = split_dataset(dataset, labels)
-    for hidden, final in [['sigmoid', 'sigmoid'], ['sigmoid', 'tanh'], ['tanh', 'sigmoid'], ['tanh', 'tanh']]:
+
+    fig, (ax1, ax2) = plt.subplots(2, 1, sharex=True, sharey=True)
+
+    axes = [ax1, ax2]
+    for ax in axes:
+        ax.set(xlabel='Num Hidden Layers', ylabel='Accuracy')
+        ax.set_ylim(0, 1)
+        ax.set_xlim(1, 4)
+    fig.suptitle('Classifier Accuracy as a function of Num Hidden Neurons')
+
+    for idx, (hidden, final) in enumerate([['sigmoid', 'sigmoid'], ['tanh', 'tanh']]):
+        accs = []
+        best_model = None
+        best_acc = 0
+        best_str = None
         for num_hidden in [1, 2, 3, 4]:
-            nn = NeuralNetwork(hidden_layer_size=num_hidden, hidden_activation=hidden, final_activation=final,
-                               learning_rate=.001)
-            nn.train(train_ds, train_labels, num_epochs=10000)
+            nn = NeuralNetwork(num_feats=4, hidden_layer_size=num_hidden, hidden_activation=hidden,
+                               final_activation=final, learning_rate=.0001)
+            nn.train(train_ds, train_labels, num_epochs=20000)
             val_pred_labels = nn.inference(val_ds)
             val_acc = sum(val_labels == val_pred_labels) / len(val_labels)
-            print(f'Hidden Activation: {hidden}  Final Activation: {final}  {num_hidden} hidden nodes\n '
-                  f'Validation Accuracy: {val_acc}')
-        # x = 1
+            accs.append(val_acc)
+            if val_acc >= best_acc:
+                best_model = nn
+                best_acc = val_acc
+                best_str = f'Hidden Activation: {hidden}  Final Activation: {final}  {num_hidden} hidden nodes'
+
+        test_pred_labels = best_model.inference(test_ds)
+        test_acc = sum(test_labels == test_pred_labels) / len(test_labels)
+
+        print(best_str + f'\nTest Accuracy: {test_acc}')
+        axes[idx].plot([1, 2, 3, 4], accs)
+        axes[idx].set_title(f'Hidden: {hidden} Final: {final}')
+    plt.show()
+    fig.show()
 
 
 if __name__ == "__main__":
