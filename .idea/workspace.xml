@@ -35,14 +35,14 @@
         <counts>
           <entry key="csv" value="1" />
           <entry key="gitignore" value="2" />
-          <entry key="py" value="73" />
+          <entry key="py" value="74" />
           <entry key="txt" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="14" />
-          <entry key="Python" value="73" />
+          <entry key="Python" value="74" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -50,14 +50,14 @@
           <entry key="Python Console" value="424" />
           <entry key="dummy" value="27" />
           <entry key="gitignore" value="7" />
-          <entry key="py" value="31180" />
+          <entry key="py" value="31569" />
           <entry key="txt" value="132" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="166" />
-          <entry key="Python" value="31604" />
+          <entry key="Python" value="31993" />
         </counts>
       </usages-collector>
     </session>
@@ -67,29 +67,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Homework4/createDataset.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="3" selection-start-line="3" selection-end-line="14" selection-end-column="15" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Homework5/homework5.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="121" lean-forward="true" selection-start-line="121" selection-end-line="121" />
+            <state relative-caret-position="109">
+              <caret line="83" selection-start-line="83" selection-end-line="83" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
-                <marker date="1607276544703" expanded="true" signature="450:4761" ph="..." />
-                <marker date="1607276544703" expanded="true" signature="2395:3234" ph="..." />
-                <marker date="1607276544703" expanded="true" signature="3270:3466" ph="..." />
-                <marker date="1607276544703" expanded="true" signature="4772:4777" ph="..." />
               </folding>
             </state>
           </provider>
@@ -169,7 +153,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="570" />
     <option name="y" value="-30" />
     <option name="width" value="980" />
@@ -186,11 +170,6 @@
             <path>
               <item name="MachineLearningClass" type="b2602c69:ProjectViewProjectNode" />
               <item name="MachineLearningClass" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MachineLearningClass" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MachineLearningClass" type="462c0819:PsiDirectoryNode" />
-              <item name="Homework3" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MachineLearningClass" type="b2602c69:ProjectViewProjectNode" />
@@ -415,16 +394,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="848" extended-state="7" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49799198" visible="true" weight="0.0892267" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.502008" side_tool="true" weight="0.0892267" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32867134" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.24895105" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39300698" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.16083916" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.47412586" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -452,8 +430,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Homework5/homework5.py</url>
-          <line>119</line>
-          <option name="timeStamp" value="19" />
+          <line>124</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Homework5/homework5.py</url>
+          <line>83</line>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -757,9 +740,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -767,9 +747,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="3" selection-start-line="3" selection-end-line="14" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -784,22 +761,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="68" column="13" lean-forward="true" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="13" />
-          <folding>
-            <element signature="e#188#206#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Homework5/homework5.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="121" lean-forward="true" selection-start-line="121" selection-end-line="121" />
+        <state relative-caret-position="109">
+          <caret line="83" selection-start-line="83" selection-end-line="83" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-            <marker date="1607276544703" expanded="true" signature="450:4761" ph="..." />
-            <marker date="1607276544703" expanded="true" signature="2395:3234" ph="..." />
-            <marker date="1607276544703" expanded="true" signature="3270:3466" ph="..." />
-            <marker date="1607276544703" expanded="true" signature="4772:4777" ph="..." />
           </folding>
         </state>
       </provider>
