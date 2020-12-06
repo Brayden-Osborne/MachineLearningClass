@@ -37,54 +37,64 @@ def split_dataset(dataset, labels):
 
 
 class NeuralNetwork:
-    def __init__(self, num_feats=4, num_classes=2, hidden_layer_size=None,
-                 hidden_activation="tanh", final_activation="sigmoid", learning_rate=.001):
+    def __init__(self, num_feats=4, hidden_layer_size=None, hidden_activation="tanh",
+                 final_activation="sigmoid", learning_rate=.001):
         self.hidden_activation = get_activation_function(hidden_activation)
         self.hidden_activation_derivative = get_derivative_activation_function(hidden_activation)
         self.final_activation = get_activation_function(final_activation)
         self.final_activation_derivative = get_derivative_activation_function(final_activation)
         self.hidden_weights = np.random.randn(num_feats, hidden_layer_size) * .01
-        self.hidden_bias = np.ones((1, hidden_layer_size))
+        self.hidden_bias = np.random.randn(1, hidden_layer_size) * .01
         self.final_weights = np.random.randn(1, hidden_layer_size) * .01
-        self.final_bias = np.ones((1, 1))
+        self.final_bias = np.random.randn(1, 1) * .01
         self.learning_rate = learning_rate
 
     def train(self, data, labels, num_epochs=100):
         for epoch in range(num_epochs):
-            hidden_out, final_out = self.forward(data)
+            h_o_pre, hidden_out, f_o_pre, final_out = self.forward(data)
             loss = self.calc_loss(y_true=labels, y_pred=final_out)
-            self.backprop(hidden_out, final_out, data, labels)
+            self.backprop(hidden_out, final_out, data, labels, h_o_pre, f_o_pre)
             # print(loss)
 
-    def backprop(self, hidden_out, final_out, in_data, labels):
-        delta_final = final_out - labels
-        final_weight_change = (1 / len(labels)) * np.dot(delta_final, hidden_out.T)
-        final_bias_change = (1 / len(labels)) * np.sum(delta_final, axis=1, keepdims=True)
+    def backprop(self, hidden_out, final_out, in_data, labels, h_o_pre, f_o_pre):
 
-        delta_hidden = np.multiply(np.dot(self.final_weights.T, delta_final), 1 - np.power(hidden_out, 2))
-        hidden_weight_change = (1 / len(labels)) * np.dot(delta_hidden, in_data)
-        hidden_bias_change = np.sum(delta_hidden, axis=1, keepdims=True)
+        # FINAL
+        d_error_d_out_f = final_out - labels
+        d_out_d_net_f = self.final_activation_derivative(f_o_pre)
+        d_net_d_weight_f = hidden_out
+        d_error_d_weight_f = d_error_d_out_f * d_out_d_net_f * d_net_d_weight_f
+        final_weight_update = np.sum(d_error_d_weight_f, axis=1) / len(d_error_d_weight_f)
+        final_bias_change = (1 / len(labels)) * np.sum(d_error_d_out_f, axis=1, keepdims=True)
 
-        self.final_weights = self.final_weights - self.learning_rate * final_weight_change
-        self.hidden_weights = self.hidden_weights - self.learning_rate * hidden_weight_change.T
+        # HIDDEN
+        d_error_d_out_h = np.dot(self.final_weights.T, d_error_d_out_f)
+        d_out_d_net_h = self.hidden_activation_derivative(h_o_pre)
+        d_net_d_weight_h = np.copy(in_data)
+        d_error_d_weight_h = np.dot(d_error_d_out_f * d_out_d_net_h, d_net_d_weight_h)
+        hidden_weight_update = d_error_d_weight_h
+        hidden_bias_change = np.sum(d_error_d_out_h, axis=1, keepdims=True)
+
+        # UPDATE WEIGHTS AND BIASES
+        self.final_weights = self.final_weights - self.learning_rate * final_weight_update
+        self.hidden_weights = self.hidden_weights - self.learning_rate * hidden_weight_update.T
         self.final_bias = self.final_bias - self.learning_rate * final_bias_change.T
         self.hidden_bias = self.hidden_bias - self.learning_rate * hidden_bias_change.T
 
     def calc_loss(self, y_true, y_pred):
-        loss_array = np.multiply(np.log(y_pred), y_true) + np.multiply((1 - y_true), np.log(1 - y_pred))
-        avg_loss = np.squeeze(-np.sum(loss_array) / len(y_true))
+        error = 1/2 * pow(y_true - y_pred, 2)
+        avg_loss = np.squeeze(np.sum(error) / len(y_true))
         return avg_loss
 
     def forward(self, input_data):
         x = np.copy(input_data)
         hidden_output = np.dot(self.hidden_weights.T, x.T) + self.hidden_bias.T
-        activated_h_o = self.hidden_activation(hidden_output)
+        activated_h_o = self.hidden_activation(np.copy(hidden_output))
         final_output = np.dot(self.final_weights, activated_h_o) + self.final_bias.T
         activated_f_o = self.final_activation(final_output)
-        return activated_h_o, activated_f_o
+        return hidden_output, activated_h_o, final_output, activated_f_o
 
     def inference(self, data):
-        _, y_hat = self.forward(data)
+        _, _, _, y_hat = self.forward(data)
         plus_min = np.sign(y_hat - .5)
         labels = [0 if val == -1 else 1 for val in plus_min[0]]
         return np.array(labels)
@@ -126,7 +136,7 @@ def main():
             val_acc = sum(val_labels == val_pred_labels) / len(val_labels)
             print(f'Hidden Activation: {hidden}  Final Activation: {final}  {num_hidden} hidden nodes\n '
                   f'Validation Accuracy: {val_acc}')
-        x = 1
+        # x = 1
 
 
 if __name__ == "__main__":

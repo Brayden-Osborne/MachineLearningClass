@@ -35,14 +35,14 @@
         <counts>
           <entry key="csv" value="1" />
           <entry key="gitignore" value="2" />
-          <entry key="py" value="74" />
+          <entry key="py" value="76" />
           <entry key="txt" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="14" />
-          <entry key="Python" value="74" />
+          <entry key="Python" value="76" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -50,14 +50,14 @@
           <entry key="Python Console" value="424" />
           <entry key="dummy" value="27" />
           <entry key="gitignore" value="7" />
-          <entry key="py" value="31569" />
-          <entry key="txt" value="132" />
+          <entry key="py" value="32386" />
+          <entry key="txt" value="134" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="166" />
-          <entry key="Python" value="31993" />
+          <entry key="PLAIN_TEXT" value="168" />
+          <entry key="Python" value="32810" />
         </counts>
       </usages-collector>
     </session>
@@ -70,11 +70,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Homework5/homework5.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="83" selection-start-line="83" selection-end-line="83" />
+            <state relative-caret-position="2176">
+              <caret line="128" column="101" lean-forward="true" selection-start-line="128" selection-start-column="101" selection-end-line="128" selection-end-column="101" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
@@ -90,7 +99,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>self.w</find>
       <find>.w</find>
       <find>objective_function_to_minimize</find>
       <find>self.a2</find>
@@ -120,6 +128,7 @@
       <find>get_entropy</find>
       <find>self.disc_bin_vals</find>
       <find>disc</find>
+      <find>hidden_activation_derivative</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -154,10 +163,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="570" />
-    <option name="y" value="-30" />
-    <option name="width" value="980" />
-    <option name="height" value="1060" />
+    <option name="x" value="952" />
+    <option name="width" value="977" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -395,14 +403,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49799198" visible="true" weight="0.0892267" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49799198" visible="true" weight="0.042300068" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.502008" side_tool="true" weight="0.0892267" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32867134" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.16083916" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.47412586" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.41398603" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.46993008" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -426,23 +435,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Plots and tests" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Homework5/homework5.py</url>
-          <line>124</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Homework5/homework5.py</url>
-          <line>83</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-      </breakpoints>
-      <breakpoints-dialog>
-        <breakpoints-dialog />
-      </breakpoints-dialog>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="__py_debug_temp_var_1343549946" />
@@ -485,47 +477,47 @@
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
+        <expression-string>np.dot(tmp,d_net_d_weight_h)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>tmp.T * d_net_d_weight_h</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>tmp.T * d_net_d_weight_h.T</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>tmp * d_net_d_weight_h.T</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>tmp * d_net_d_weight_h</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>d_error_d_out_f * d_out_d_net_h</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>np.dot(self.final_weights.T, d_error_d_out)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>y_hat - .5</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
         <expression-string>np.dot(self.hidden_weights, x.T)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>x.T</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>np.dot(delta_hidden, in_data)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>np.dot(delta_hidden, in_data.T)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>hidden_output = hidden_output + self.hidden_bias.T</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>np.dot(self.hidden_weights, x)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>self.weights[neuron_idx].T.dot(a.T)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>self.weights[neuron_idx].T.dot(a).T</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -703,13 +695,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Homework5/data_banknote_authentication.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-816" />
@@ -761,13 +746,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="68" column="13" lean-forward="true" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="13" />
+          <folding>
+            <element signature="e#188#206#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Homework5/homework5.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="83" selection-start-line="83" selection-end-line="83" />
+        <state relative-caret-position="2176">
+          <caret line="128" column="101" lean-forward="true" selection-start-line="128" selection-start-column="101" selection-end-line="128" selection-end-column="101" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
