@@ -1,14 +1,19 @@
 <component name="ProjectDictionaryState">
   <dictionary name="brayd">
     <words>
+      <w>backpropagation</w>
       <w>brayd</w>
       <w>brayden</w>
       <w>dataset</w>
+      <w>dbias</w>
       <w>discretize</w>
+      <w>dweight</w>
+      <w>feedforward</w>
       <w>pred</w>
       <w>probs</w>
       <w>setosa</w>
       <w>simp</w>
+      <w>tanh</w>
       <w>vals</w>
       <w>versicolor</w>
       <w>virginica</w>
